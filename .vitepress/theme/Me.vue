@@ -1,17 +1,18 @@
 <template>
   <div class="body">
-    <h1>Hello.</h1>
-    <p style="font-weight: 500; font-size: 2.2em">My name is {{$frontmatter.englishName}}.</p>
+    <h1>你好（&lt; = &gt;）/</h1>
+    <p style="font-weight: 500; font-size: 2.2em">我跟你講我的名字是 {{$frontmatter.englishName}}.</p>
     <p>
-      I am an student programmer and the founder of
-      <a :href="$frontmatter.organizeLink" target="_blank">{{$frontmatter.organizeName}}</a>  Open Source Community. Most of my work is open source and publicly available on
+      我是個學生啦,
+        這是我的開源社區
       <a :href="$frontmatter.githubLink" target="_blank">GitHub</a>.
     </p>
     <p>
-        If you happen to speak {{$frontmatter.speakLanguage}}, my {{$frontmatter.speakLanguage}} name is {{$frontmatter.languageName}} ({{$frontmatter.languagePronunciation}}).
+        如果你的母語也是 {{$frontmatter.speakLanguage}}, <br /> 
+        我的 {{$frontmatter.speakLanguage}} 名字 {{$frontmatter.languageName}} ({{$frontmatter.languagePronunciation}}).
     </p>
     <p>
-        Outside of programming and finish school and get a job, I enjoy video games.
+        差不多了啦，沒什麽好講的。
     </p>
   </div>
 </template>

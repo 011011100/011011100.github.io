@@ -51,7 +51,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   base:'/',
-  title: 'Simple',
+  title: 'title',
   description: "vitepress theme simple",
   head: [
     [

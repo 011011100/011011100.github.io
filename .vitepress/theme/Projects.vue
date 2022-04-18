@@ -36,6 +36,7 @@
           >
             <div v-if="item.icon" class="pt-2 pr-5">
               <Simple v-if="item.icon === 'simple'" class="text-4xl opacity-50" />
+              <blueBall v-else-if="item.icon === 'blueBall'" class="text-4xl opacity-50" />
               <Unknown v-else class="text-4xl opacity-50" />
             </div>
             <div class="flex-auto">
@@ -59,6 +60,7 @@
 <script setup>
 import Simple from './icon/Simple.vue'
 import Unknown from './icon/Unknown.vue'
+import blueBall from './icon/PokeBall.vue'
 
 </script>
 
