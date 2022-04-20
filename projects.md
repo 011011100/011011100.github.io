@@ -1,6 +1,6 @@
 ---
-title: Projects
-subtext: List of projects that I am proud of
+title: 我的项目
+subtext: 我引以为豪的项目清单（其实也没有 XD）
 projects:
   最新的:
     - name: '我的博客'

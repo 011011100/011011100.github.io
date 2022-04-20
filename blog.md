@@ -1,4 +1,4 @@
 ---
-title: Blog
-subtext: Blog .
+title: 我的博客
+subtext: ᓚᘏᗢ
 ---
