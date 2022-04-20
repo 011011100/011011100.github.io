@@ -16,12 +16,12 @@
             class="hover:text-gray-700"
             href="/"
             rel="noopener"
-            >me </a
+            >個人介紹 </a
           >
           <span class="mr-2 ml-2">·</span>
-          <a class="hover:text-gray-700" href="/blog.html">blog</a>
+          <a class="hover:text-gray-700" href="/blog.html">我的博客</a>
           <span class="mr-2 ml-2">·</span>
-          <a class="hover:text-gray-700" href="/projects.html">projects </a>
+          <a class="hover:text-gray-700" href="/projects.html">我的項目 </a>
           <span class="mr-2 ml-2">·</span>
           <a
             class="hover:text-gray-700"
