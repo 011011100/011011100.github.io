@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a}from"./app.2d2adcca.js";const r='{"title":"我的博客","description":"","frontmatter":{"title":"我的博客","subtext":"ᓚᘏᗢ"},"headers":[],"relativePath":"blog.md"}';var o=t({},[["render",function(t,r,o,s,d,i){return a(),e("div")}]]);export{r as __pageData,o as default};
