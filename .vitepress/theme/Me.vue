@@ -1,18 +1,18 @@
 <template>
   <div class="body">
-    <h1>你好（&lt; = &gt;）/</h1>
-    <p style="font-weight: 500; font-size: 2.2em">我跟你講我的名字是 {{$frontmatter.englishName}}.</p>
+    <h1>你好 (⨞:|】</h1>
+    <p style="font-weight: 500; font-size: 2.2em">我的名字是 {{$frontmatter.englishName}}.</p>
     <p>
-      我是個學生啦,
+      我馬上就不是個學生啦,
         這是我的開源社區
       <a :href="$frontmatter.githubLink" target="_blank">GitHub</a>.
     </p>
     <p>
-        如果你的母語也是 {{$frontmatter.speakLanguage}}, <br /> 
-        我的 {{$frontmatter.speakLanguage}} 名字 {{$frontmatter.languageName}} ({{$frontmatter.languagePronunciation}}).
+        我的 {{$frontmatter.speakLanguage}} 名字 {{$frontmatter.languageName}} ({{$frontmatter.languagePronunciation}}).<br />
+        如果你的母語也是 {{$frontmatter.speakLanguage}}, 或許我們可以交個朋友
     </p>
     <p>
-        差不多了啦，沒什麽好講的。
+        嗨嗨嗨。
     </p>
   </div>
 </template>
