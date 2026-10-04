@@ -3,8 +3,31 @@
 @tailwind utilities;
 
 :root {
-  --c-brand: #3eaf7c;
-  --c-brand-light: #4abf8a;
+  --site-accent: #23845a;
+  --site-accent-hover: #1c6e4b;
+  --site-background: #fff;
+  --site-ink: #111827;
+  --site-muted: #6b7280;
+  --site-border: #e5e7eb;
+  --site-width: 1024px;
+  --site-gutter: 24px;
+  color-scheme: light;
+}
+
+body {
+  background: var(--site-background);
+  color: var(--site-ink);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--site-accent);
+  outline-offset: 5px;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --site-gutter: 20px;
+  }
 }
 
 nav img {
@@ -16,15 +39,15 @@ p img {
 }
 
 .prose hr {
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--site-border);
 }
 
 .link {
-  color: var(--c-brand);
+  color: var(--site-accent);
 }
 
 .link:hover {
-  color: var(--c-brand-light);
+  color: var(--site-accent-hover);
 }
 
 .header-anchor {
@@ -52,7 +75,9 @@ p img {
   top: 0.65rem;
   right: 1rem;
   color: #9ca3af;
-  font: 11px/1.4 ui-monospace, monospace;
+  font:
+    11px/1.4 ui-monospace,
+    monospace;
 }
 
 /* This custom theme does not install the default theme's copy-code handler. */

@@ -25,7 +25,7 @@ export default defineConfig({
         href: '/feed.rss'
       }
     ],
-    ['meta', { name: 'theme-color', content: '#f7f7f2' }]
+    ['meta', { name: 'theme-color', content: '#ffffff' }]
   ],
   buildEnd: generateFeed
 })

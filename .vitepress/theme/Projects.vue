@@ -1,21 +1,12 @@
 <template>
-  <div class="divide-y divide-gray-200">
-    <div class="pt-6 pb-8 space-y-2 md:space-y-5">
-      <h1
-        class="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
-      >
-        {{ frontmatter.title }}
-      </h1>
-      <p class="text-lg leading-7 text-gray-500">
-        {{ frontmatter.subtext }}
-      </p>
-    </div>
+  <div>
+    <PageHeader :title="frontmatter.title" :description="frontmatter.subtext" />
 
     <div>
       <template v-for="key in Object.keys(frontmatter.projects)" :key="key">
-        <h4 class="mt-10 font-bold">
+        <h2 class="mt-10 first:mt-0 font-bold">
           {{ key }}
-        </h4>
+        </h2>
         <div class="project-grid py-2 -mx-3 gap-2">
           <a
             v-for="(item, idx) in frontmatter.projects[key]"
@@ -49,18 +40,12 @@
         </div>
       </template>
     </div>
-
-    <div>
-      <br />
-      <br />
-      <br />
-      <br />
-    </div>
   </div>
 </template>
 
 <script setup>
 import { useData } from 'vitepress'
+import PageHeader from './components/PageHeader.vue'
 const { frontmatter } = useData()
 import Simple from './icon/Simple.vue'
 import Unknown from './icon/Unknown.vue'

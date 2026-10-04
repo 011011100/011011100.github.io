@@ -1,6 +1,7 @@
 <script setup>
 import Date from './Date.vue'
 import Author from './Author.vue'
+import PageHeader from './components/PageHeader.vue'
 import { computed } from 'vue'
 import { useData, useRoute } from 'vitepress'
 import { data as posts } from '../posts.data'
@@ -24,18 +25,13 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1])
 </script>
 
 <template>
-  <article class="xl:divide-y xl:divide-gray-200">
-    <header class="pt-6 xl:pb-10 space-y-1 text-center">
-      <Date v-if="date" :date="date" />
-      <h1
-        class="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-4xl sm:leading-10 md:text-5xl md:leading-14"
-      >
-        {{ data.title }}
-      </h1>
-    </header>
+  <article>
+    <PageHeader :title="data.title">
+      <template v-if="date" #meta><Date :date="date" /></template>
+    </PageHeader>
 
     <div
-      class="divide-y xl:divide-y-0 divide-gray-200 xl:grid xl:grid-cols-4 xl:gap-x-10 pb-16 xl:pb-20"
+      class="divide-y xl:divide-y-0 divide-gray-200 xl:grid xl:grid-cols-4 xl:gap-x-10"
       style="grid-template-rows: auto 1fr"
     >
       <Author />

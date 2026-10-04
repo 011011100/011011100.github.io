@@ -268,6 +268,7 @@ onBeforeUnmount(() => {
   color: var(--ink);
 }
 .demo-heading {
+  color: var(--site-ink);
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -278,7 +279,7 @@ onBeforeUnmount(() => {
     11px/1.4 ui-monospace,
     monospace;
   letter-spacing: 0.09em;
-  color: var(--muted);
+  color: var(--site-muted);
 }
 h2 {
   margin: 10px 0 0;
@@ -287,7 +288,7 @@ h2 {
   letter-spacing: -0.04em;
 }
 .demo-tag {
-  border: 1px solid #d3d5cb;
+  border: 1px solid var(--site-border);
   border-radius: 4px;
   padding: 5px 8px;
   font:
@@ -299,7 +300,7 @@ h2 {
   margin: 12px 0 24px;
   font-size: 14px;
   line-height: 1.8;
-  color: var(--muted);
+  color: var(--site-muted);
 }
 .motion-stage {
   position: relative;

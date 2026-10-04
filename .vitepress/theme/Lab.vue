@@ -1,20 +1,15 @@
 <script setup>
+import PageHeader from './components/PageHeader.vue'
 import TimelineDemo from './experiments/TimelineDemo.vue'
 import HtmlCanvasDemo from './experiments/HtmlCanvasDemo.vue'
 </script>
 
 <template>
   <div class="lab-page">
-    <header class="lab-intro">
-      <div class="lab-eyebrow"><span></span> A SMALL PLACE FOR BIG IDEAS</div>
-      <div class="lab-title-row">
-        <h1>动画实验室<span>Lab.</span></h1>
-        <span class="lab-edition">WEB EXPERIMENTS<br />VOL. 001 / 2026</span>
-      </div>
-      <p>
-        把想法变成会动的网页。这里记录我对动画、交互和浏览器新能力的小小探索。
-      </p>
-    </header>
+    <PageHeader
+      title="动画实验室"
+      description="把想法变成会动的网页。这里记录我对动画、交互和浏览器新能力的小小探索。"
+    />
     <TimelineDemo />
     <div class="lab-divider"><span>KEEP EXPLORING</span><span>↓</span></div>
     <section aria-labelledby="canvas-title">
@@ -45,7 +40,7 @@ import HtmlCanvasDemo from './experiments/HtmlCanvasDemo.vue'
     11px/1.4 ui-monospace,
     monospace;
   letter-spacing: 0.09em;
-  color: #686d60;
+  color: var(--site-muted);
 }
 .canvas-heading h2 {
   margin: 10px 0 0;
@@ -57,80 +52,18 @@ import HtmlCanvasDemo from './experiments/HtmlCanvasDemo.vue'
   margin: 12px 0 24px;
   font-size: 14px;
   line-height: 1.8;
-  color: #686d60;
-}
-.lab-page {
-  --lab-ink: #20231d;
-  color: var(--lab-ink);
-  padding-bottom: 36px;
-}
-.lab-intro {
-  padding: 24px 0 44px;
-  margin-bottom: 36px;
-  border-bottom: 1px solid #d9ddcf;
-}
-.lab-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font:
-    10px/1.6 ui-monospace,
-    monospace;
-  letter-spacing: 0.09em;
-  color: #73796a;
-}
-.lab-eyebrow > span {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #6a823e;
-}
-.lab-title-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 20px;
-  margin-top: 20px;
-}
-h1 {
-  font-size: clamp(32px, 5vw, 58px);
-  line-height: 1.2;
-  letter-spacing: -0.055em;
-  font-weight: 600;
-}
-h1 > span {
-  font-family: Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
-  padding-left: 16px;
-  color: #687c4d;
-}
-.lab-edition {
-  flex-shrink: 0;
-  color: #767c6e;
-  font:
-    10px/1.7 ui-monospace,
-    monospace;
-  text-align: right;
-  letter-spacing: 0.06em;
-}
-.lab-intro p {
-  max-width: 620px;
-  font-size: 14px;
-  color: #777d6e;
-  line-height: 1.9;
-  margin-top: 20px;
+  color: var(--site-muted);
 }
 .lab-divider {
   display: flex;
   justify-content: space-between;
   padding: 32px 0;
   margin: 32px 0 20px;
-  border-bottom: 1px solid #d9ddcf;
+  border-bottom: 1px solid var(--site-border);
   font:
     10px/1.5 ui-monospace,
     monospace;
-  color: #818777;
+  color: var(--site-muted);
   letter-spacing: 0.1em;
 }
 .lab-divider span + span {
@@ -139,32 +72,17 @@ h1 > span {
 .lab-footer {
   margin-top: 60px;
   padding-top: 24px;
-  border-top: 1px solid #d9ddcf;
+  border-top: 1px solid var(--site-border);
   display: flex;
   justify-content: space-between;
   gap: 20px;
   font-size: 11px;
-  color: #777d6e;
+  color: var(--site-muted);
 }
 .lab-footer a {
-  color: #424d35;
-}
-.lab-footer a:focus-visible {
-  outline: 2px solid #536b32;
-  outline-offset: 4px;
+  color: var(--site-accent);
 }
 @media (max-width: 600px) {
-  .lab-intro {
-    padding-top: 14px;
-    padding-bottom: 28px;
-    margin-bottom: 28px;
-  }
-  .lab-edition {
-    display: none;
-  }
-  .lab-intro p {
-    font-size: 13px;
-  }
   .lab-footer {
     flex-direction: column;
     gap: 12px;

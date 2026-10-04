@@ -2,22 +2,16 @@
 import { useData } from 'vitepress'
 const { frontmatter } = useData()
 import Date from './Date.vue'
+import PageHeader from './components/PageHeader.vue'
 import { data as posts } from '../posts.data'
 </script>
 
 <template>
-  <div class="divide-y divide-gray-200">
-    <div class="pt-6 pb-8 space-y-2 md:space-y-5">
-      <h1
-        class="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
-      >
-        {{ frontmatter.title }}
-      </h1>
-      <p class="text-lg leading-7 text-gray-500">{{ frontmatter.subtext }}</p>
-    </div>
+  <div>
+    <PageHeader :title="frontmatter.title" :description="frontmatter.subtext" />
     <ul class="divide-y divide-gray-200">
       <li
-        class="py-12"
+        class="py-10 first:pt-0"
         v-for="{ title, href, date, excerpt } of posts"
         :key="href"
       >
