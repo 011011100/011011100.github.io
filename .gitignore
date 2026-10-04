@@ -18,3 +18,7 @@ cypress/screenshots
 public/user-avatars
 public/sponsors
 .vscode
+
+.vitepress/cache
+.vitepress/.temp
+.pnpm-store

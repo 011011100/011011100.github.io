@@ -10,11 +10,15 @@ const { frontmatter: data } = useData()
 const route = useRoute()
 
 function findCurrentIndex() {
-  return posts.findIndex((p) => p.href === route.path)
+  return posts.findIndex(
+    (p) =>
+      p.href.replace(/\.html$/, '') ===
+      decodeURI(route.path).replace(/\.html$/, '')
+  )
 }
 
 // use the customData date which contains pre-resolved date info
-const date = computed(() => posts[findCurrentIndex()].date)
+const date = computed(() => posts[findCurrentIndex()]?.date)
 const nextPost = computed(() => posts[findCurrentIndex() - 1])
 const prevPost = computed(() => posts[findCurrentIndex() + 1])
 </script>
@@ -22,31 +26,16 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1])
 <template>
   <article class="xl:divide-y xl:divide-gray-200">
     <header class="pt-6 xl:pb-10 space-y-1 text-center">
-      <Date :date="date" />
+      <Date v-if="date" :date="date" />
       <h1
-        class="
-          text-3xl
-          leading-9
-          font-extrabold
-          text-gray-900
-          tracking-tight
-          sm:text-4xl sm:leading-10
-          md:text-5xl md:leading-14
-        "
+        class="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-4xl sm:leading-10 md:text-5xl md:leading-14"
       >
         {{ data.title }}
       </h1>
     </header>
 
     <div
-      class="
-        divide-y
-        xl:divide-y-0
-        divide-gray-200
-        xl:grid xl:grid-cols-4 xl:gap-x-10
-        pb-16
-        xl:pb-20
-      "
+      class="divide-y xl:divide-y-0 divide-gray-200 xl:grid xl:grid-cols-4 xl:gap-x-10 pb-16 xl:pb-20"
       style="grid-template-rows: auto 1fr"
     >
       <Author />
@@ -55,13 +44,7 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1])
       </div>
 
       <footer
-        class="
-          text-sm
-          font-medium
-          leading-5
-          divide-y divide-gray-200
-          xl:col-start-1 xl:row-start-2
-        "
+        class="text-sm font-medium leading-5 divide-y divide-gray-200 xl:col-start-1 xl:row-start-2"
       >
         <div v-if="nextPost" class="py-8">
           <h2 class="text-xs tracking-wide uppercase text-gray-500">

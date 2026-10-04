@@ -1,28 +1,40 @@
 {
-  "name": "vitepress-theme-simple",
-  "version": "0.0.1",
-  "description": "VitePress theme for blog",
-  "packageManager": "pnpm@6.32.6",
-  "main": "index.js",
+  "name": "011011100-blog",
+  "version": "1.0.0",
+  "description": "A personal blog and interactive animation lab",
+  "packageManager": "pnpm@10.34.6",
   "scripts": {
     "dev": "vitepress",
-    "build": "vitepress build && node ./.vitepress/genFeed",
-    "serve": "vitepress serve --port 8099"
+    "build": "vitepress build",
+    "preview": "vitepress preview --port 8099",
+    "serve": "pnpm preview",
+    "test": "node --test tests/*.test.mjs"
   },
   "keywords": [
     "vitepress",
     "theme",
     "blog"
   ],
-  "author": "Elone Hoo <huchengyea@163.com>",
+  "author": "011011100",
   "license": "MIT",
-  "devDependencies":{
-    "@tailwindcss/typography": "^0.5.2",
-    "feed": "^4.2.2",
-    "gray-matter": "^4.0.3",
-    "vitepress": "^0.22.3"
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.20",
+    "feed": "^6.0.0",
+    "tailwindcss": "^3.4.19",
+    "vitepress": "1.6.4"
   },
   "dependencies": {
-    "tailwindcss": "^3.0.24"
+    "gsap": "^3.15.0",
+    "vue": "^3.5.43"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=24 <25",
+    "pnpm": "10.x"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }

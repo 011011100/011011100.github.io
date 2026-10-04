@@ -31,83 +31,31 @@ p img {
   display: none;
 }
 
-/**
- * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML.
- * Based on https://github.com/chriskempson/tomorrow-theme
- *
- * @author Rose Pritchard
- */
-.token.comment,
-.token.block-comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: #999;
+/* VitePress 1 uses Shiki CSS variables instead of the old Prism tokens. */
+.prose div[class*='language-'] {
+  position: relative;
 }
 
-.token.punctuation {
-  color: #ccc;
+.prose .shiki {
+  padding-top: 2.25rem;
 }
 
-.token.tag,
-.token.attr-name,
-.token.namespace,
-.token.deleted {
-  color: #e2777a;
+.prose .shiki span {
+  color: var(--shiki-dark, inherit);
+  font-style: var(--shiki-dark-font-style, inherit);
+  font-weight: var(--shiki-dark-font-weight, inherit);
+  text-decoration: var(--shiki-dark-text-decoration, inherit);
 }
 
-.token.function-name {
-  color: #6196cc;
+.prose div[class*='language-'] > .lang {
+  position: absolute;
+  top: 0.65rem;
+  right: 1rem;
+  color: #9ca3af;
+  font: 11px/1.4 ui-monospace, monospace;
 }
 
-.token.boolean,
-.token.number,
-.token.function {
-  color: #f08d49;
-}
-
-.token.property,
-.token.class-name,
-.token.constant,
-.token.symbol {
-  color: #f8c555;
-}
-
-.token.selector,
-.token.important,
-.token.atrule,
-.token.keyword,
-.token.builtin {
-  color: #cc99cd;
-}
-
-.token.string,
-.token.char,
-.token.attr-value,
-.token.regex,
-.token.variable {
-  color: #7ec699;
-}
-
-.token.operator,
-.token.entity,
-.token.url {
-  color: #67cdcc;
-}
-
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
-
-.token.italic {
-  font-style: italic;
-}
-
-.token.entity {
-  cursor: help;
-}
-
-.token.inserted {
-  color: #67cdcc;
+/* This custom theme does not install the default theme's copy-code handler. */
+.prose div[class*='language-'] > .copy {
+  display: none;
 }

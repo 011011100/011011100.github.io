@@ -1,47 +1,49 @@
 <template>
   <div class="divide-y divide-gray-200">
-
     <div class="pt-6 pb-8 space-y-2 md:space-y-5">
       <h1
-        class="
-          text-3xl
-          leading-9
-          font-extrabold
-          text-gray-900
-          tracking-tight
-          sm:text-4xl sm:leading-10
-          md:text-6xl md:leading-14
-        "
+        class="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
       >
-        {{ $frontmatter.title }}
+        {{ frontmatter.title }}
       </h1>
       <p class="text-lg leading-7 text-gray-500">
-        {{ $frontmatter.subtext }}
+        {{ frontmatter.subtext }}
       </p>
     </div>
 
     <div>
-      <template v-for="key in Object.keys($frontmatter.projects)" :key="key">
+      <template v-for="key in Object.keys(frontmatter.projects)" :key="key">
         <h4 class="mt-10 font-bold">
           {{ key }}
         </h4>
         <div class="project-grid py-2 -mx-3 gap-2">
           <a
-            v-for="item, idx in $frontmatter.projects[key]"
+            v-for="(item, idx) in frontmatter.projects[key]"
             :key="idx"
             class="item relative flex items-center"
             :href="item.link"
             target="_blank"
-            :class="!item.link ? 'opacity-0 pointer-events-none h-0 -mt-8 -mb-4' : ''"
+            :class="
+              !item.link ? 'opacity-0 pointer-events-none h-0 -mt-8 -mb-4' : ''
+            "
           >
             <div v-if="item.icon" class="pt-2 pr-5">
-              <Simple v-if="item.icon === 'simple'" class="text-4xl opacity-50" />
-              <blueBall v-else-if="item.icon === 'blueBall'" class="text-4xl opacity-50" />
+              <Simple
+                v-if="item.icon === 'simple'"
+                class="text-4xl opacity-50"
+              />
+              <blueBall
+                v-else-if="item.icon === 'blueBall'"
+                class="text-4xl opacity-50"
+              />
               <Unknown v-else class="text-4xl opacity-50" />
             </div>
             <div class="flex-auto">
-              <div cla ss="text-normal">{{ item.name }}</div>
-              <div class="desc text-sm opacity-50 font-normal" v-html="item.desc" />
+              <div class="text-normal">{{ item.name }}</div>
+              <div
+                class="desc text-sm opacity-50 font-normal"
+                v-html="item.desc"
+              />
             </div>
           </a>
         </div>
@@ -58,10 +60,11 @@
 </template>
 
 <script setup>
+import { useData } from 'vitepress'
+const { frontmatter } = useData()
 import Simple from './icon/Simple.vue'
 import Unknown from './icon/Unknown.vue'
 import blueBall from './icon/PokeBall.vue'
-
 </script>
 
 <style scoped>
