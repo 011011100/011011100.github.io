@@ -14,6 +14,7 @@
             class="item relative flex items-center"
             :href="item.link"
             target="_blank"
+            rel="noopener noreferrer"
             :class="
               !item.link ? 'opacity-0 pointer-events-none h-0 -mt-8 -mb-4' : ''
             "
@@ -27,6 +28,7 @@
                 v-else-if="item.icon === 'blueBall'"
                 class="text-4xl opacity-50"
               />
+              <Kiwi v-else-if="item.icon === 'kiwi'" class="text-4xl opacity-60" />
               <Unknown v-else class="text-4xl opacity-50" />
             </div>
             <div class="flex-auto">
@@ -50,6 +52,7 @@ const { frontmatter } = useData()
 import Simple from './icon/Simple.vue'
 import Unknown from './icon/Unknown.vue'
 import blueBall from './icon/PokeBall.vue'
+import Kiwi from './icon/Kiwi.vue'
 </script>
 
 <style scoped>
